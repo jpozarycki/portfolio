@@ -1,0 +1,76 @@
+.navbar {
+  background-color: black!important;
+}
+
+.navbar-brand {
+  padding-left: 5ch;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+
+}
+
+
+.navbar-brand:hover {
+  transform: scale(1.1);
+  color: lightgray;
+}
+
+/*.navbar-brand::before {*/
+/*  content: 'JAKUB';*/
+/*  color: lightgray;*/
+/*}*/
+name {
+  color: lightgray;
+}
+
+.navbar-nav {
+  padding-right: 10ch;
+}
+
+.nav-link {
+  text-transform: uppercase;
+  color: white!important;
+  font-size: 18px;
+  transition: 0.5s;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  padding: 8px 0;
+  position: relative;
+}
+
+.underline {
+  border-bottom: 2px solid;
+}
+
+.nav-item {
+  position: relative;
+  transition: 0.5s;
+  padding: 8px 10px;
+}
+
+.nav-link:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.nav-link:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+@media screen and (max-height: 300px) {
+  ul {
+    margin-top: 40px;
+  }
+}
