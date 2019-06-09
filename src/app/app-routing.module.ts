@@ -5,7 +5,6 @@ import {MainComponent} from './main/main.component';
 import {MoreComponent} from './more/more.component';
 import {ProjectsComponent} from './projects/projects.component';
 import {ContactComponent} from './contact/contact.component';
-import {ResumeComponent} from './resume/resume.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: '/home'},
@@ -14,8 +13,7 @@ const routes: Routes = [
   children: [
     {path: 'about-me', component: AboutMeComponent},
     {path: 'projects', component: ProjectsComponent},
-    {path: 'contact', component: ContactComponent},
-    {path: 'resume', component: ResumeComponent}
+    {path: 'contact', component: ContactComponent}
   ]}
 ];
 

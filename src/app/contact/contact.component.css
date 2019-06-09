@@ -1,0 +1,46 @@
+* {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+}
+
+.container {
+  margin: auto;
+  display: block;
+  /*position: fixed;*/
+  /*top: 50%;*/
+  /*left: 50%;*/
+  /*transform: translate(-50%, -50%);*/
+}
+.row {
+  margin-top: 20px;
+  text-align: center;
+}
+
+h2 {
+ padding-bottom: 15px;
+  font-weight: bolder;
+}
+
+.btn {
+  width: 65%;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn:hover, .btn:focus {
+  outline: none!important;
+  box-shadow: none!important;
+}
+
+img {
+  filter: invert(100%);
+  max-height: 35px;
+}

@@ -1,0 +1,87 @@
+.container {
+  padding-top: 4vh;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.card-header {
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+}
+
+.list-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-group-item {
+  background-color: black;
+  text-transform: uppercase;
+  color: white!important;
+  font-size: 18px;
+  transition: 0.5s;
+  letter-spacing: 0.05em;
+  padding: 2px 5px;
+  position: relative;
+}
+#description {
+  margin: 14px 8px;
+}
+.card-header, .card-body {
+  background-color: black;
+}
+
+.card {
+  transition: 0.3s;
+  border: none;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  border: none!important;
+  outline: none!important;
+  box-shadow: none!important;
+  opacity: 1!important;
+
+}
+
+a {
+  width: 80%;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.btn {
+  margin-top: 6px;
+  border-radius: 16px;
+  background-color: white;
+  color: black;
+  transition: 0.3s;
+  width: 100%;
+  position: relative;
+}
+
+/*.btn-1::before {*/
+/*  content: url("https://img.icons8.com/material/24/000000/internet.png");*/
+/*  height: 20px;*/
+/*  vertical-align: middle;*/
+/*  line-height: normal;*/
+/*}*/
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+hr {
+  background-color: #808182;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}

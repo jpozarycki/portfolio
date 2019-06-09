@@ -3,18 +3,18 @@ import {animate, group, query, style, transition, trigger} from '@angular/animat
 export const slideInAnimation = trigger('routeAnimations', [
     transition('Main => *', [
       query(':enter, :leave',
-        style({position: 'fixed', width: '100%'}),
+        style({position: 'absolute', width: '100%'}),
         {optional: true}),
       group([
         query(':enter', [
-          style({ transform: 'translateY(100%)' }),
-          animate('1.5s ease-in-out',
-            style({ transform: 'translateY(0%)' }))
+          style({ transform: 'translateX(100%)' }),
+          animate('1s ease-in-out',
+            style({ transform: 'translateX(0%)' }))
         ], { optional: true }),
         query(':leave', [
-          style({ transform:   'translateY(0%)'}),
+          style({ transform:   'translateX(0%)'}),
           animate('1s ease-in-out',
-            style({ transform: 'translateY(-100%)' }))
+            style({ transform: 'translateX(-100%)' }))
         ], { optional: true }),
       ])
     ])

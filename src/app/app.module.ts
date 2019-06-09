@@ -11,7 +11,6 @@ import {ProjectsComponent} from './projects/projects.component';
 import {ContactComponent} from './contact/contact.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MoreComponent } from './more/more.component';
-import { ResumeComponent } from './resume/resume.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import { ResumeComponent } from './resume/resume.component';
     AboutMeComponent,
     ProjectsComponent,
     ContactComponent,
-    MoreComponent,
-    ResumeComponent
+    MoreComponent
   ],
   imports: [
     BrowserModule,
