@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from '../login/service/login.service';
 import {Subscription} from 'rxjs';
+import {DataStorageService} from '../shared/data-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -8,18 +9,17 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  private resumeLink =
-    // tslint:disable-next-line:max-line-length
-    'https://firebasestorage.googleapis.com/v0/b/portfolio-3ff69.appspot.com/o/resume.pdf?alt=media&token=679deb5d-1618-4af5-b6ab-b04256820763';
+  private resumeLink: string;
   private isAuthenticated = false;
   private userSub: Subscription;
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private dataStorageService: DataStorageService) { }
 
   ngOnInit() {
     this.userSub = this.loginService.user.subscribe(user => {
       this.isAuthenticated = !!user;
     });
+    this.resumeLink = this.dataStorageService.getResumeLink();
   }
 
   onLogout() {

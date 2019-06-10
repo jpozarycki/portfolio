@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-4 col-md-8" *ngFor="let project of projects">
-      <div class="card card-cascade wider mb-3" id="card"[@cardAnimation]="state">
+      <div class="card card-cascade wider mb-3" id="card">
         <div class="card-header">{{project.title}}</div>
         <img class="card-img-top" [src]="project.pictureUrl">
         <div id="description">{{ project.description }}</div>
