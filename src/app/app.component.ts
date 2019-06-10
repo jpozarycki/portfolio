@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {slideInAnimation} from './route-animation';
+import {LoginService} from './login/service/login.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,9 @@ import {slideInAnimation} from './route-animation';
 })
 export class AppComponent implements OnInit {
 
+  constructor(private loginService: LoginService) {}
+
   ngOnInit(): void {
+    this.loginService.autoLogin();
   }
 }

@@ -8,7 +8,9 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  private resumeLink = 'https://firebasestorage.googleapis.com/v0/b/portfolio-3ff69.appspot.com/o/resume.pdf?alt=media&token=679deb5d-1618-4af5-b6ab-b04256820763';
+  private resumeLink =
+    // tslint:disable-next-line:max-line-length
+    'https://firebasestorage.googleapis.com/v0/b/portfolio-3ff69.appspot.com/o/resume.pdf?alt=media&token=679deb5d-1618-4af5-b6ab-b04256820763';
   private isAuthenticated = false;
   private userSub: Subscription;
 
@@ -20,4 +22,7 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  onLogout() {
+    this.loginService.logOut();
+  }
 }
