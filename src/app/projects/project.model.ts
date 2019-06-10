@@ -3,10 +3,10 @@ export class Project {
   pictureUrl: string;
   description: string;
   usedTechnologies: string[];
-  webLink: string;
+  webLink?: string;
   gitLink: string;
 
-  constructor(title: string, pictureUrl: string, description: string, usedTechnologies: string[], webLink: string, gitLink: string) {
+  constructor(title: string, pictureUrl: string, description: string, usedTechnologies: string[], gitLink: string, webLink?: string) {
     this.title = title;
     this.description = description;
     this.pictureUrl = pictureUrl;

@@ -16,6 +16,8 @@ import {CustomReuseStrategy} from './route-reuse-strategy';
 import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { LoadingSpinnerComponent } from './login/loading-spinner/loading-spinner.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import {HttpClientModule} from '@angular/common/http';
     ProjectsComponent,
     ContactComponent,
     MoreComponent,
-    LoginComponent
+    LoginComponent,
+    LoadingSpinnerComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

@@ -30,14 +30,12 @@ export class ProjectsComponent implements OnInit {
       'https://via.placeholder.com/500',
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus faucibus nisi sed ornare. Nulla tempus, enim quis accumsan rhoncus, dui dolor imperdiet augue, non finibus turpis purus a erat. Nam massa quam, condimentum non convallis in, blandit in dolor. ',
       ['Java', 'Angular', 'CSS3', 'MySQL'],
-      'https://www.onet.pl',
       'https://github.com'),
     new Project(
       'First project',
       'https://via.placeholder.com/500',
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus faucibus nisi sed ornare. Nulla tempus, enim quis accumsan rhoncus, dui dolor imperdiet augue, non finibus turpis purus a erat. Nam massa quam, condimentum non convallis in, blandit in dolor. ',
       ['Java', 'Angular', 'CSS3', 'MySQL'],
-      'https://www.onet.pl',
       'https://github.com'),
 
     ];

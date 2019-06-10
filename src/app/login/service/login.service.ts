@@ -28,7 +28,7 @@ export class LoginService {
   constructor(private http: HttpClient, private router: Router) { }
 
   login(email: string, password: string) {
-    this.http.post<AuthResponseData>(
+    return this.http.post<AuthResponseData>(
       'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=' + environment.API_KEY, {
       email,
       password,

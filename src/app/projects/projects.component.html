@@ -11,7 +11,7 @@
         </ul>
           <hr>
         <ul class="list-group" style="padding: 10px">
-          <a href="{{project.webLink}}"><li class="btn btn-1"><img src="https://img.icons8.com/material/24/000000/internet.png" style="max-height: 20px"><div class="hidden">Project preview</div></li></a>
+          <a href="{{project.webLink}}" *ngIf="project.webLink"><li class="btn btn-1"><img src="https://img.icons8.com/material/24/000000/internet.png" style="max-height: 20px"><div class="hidden">Project preview</div></li></a>
           <a href="{{project.gitLink}}"><li class="btn btn-2"><img src="https://img.icons8.com/ios/50/000000/github-filled.png"  style="max-height: 20px"> <div>Github code</div></li></a>
         </ul>
         </div>

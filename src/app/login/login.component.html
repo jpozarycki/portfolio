@@ -2,7 +2,10 @@
   <div class="row">
     <div class="col-xs-12">
       <h2>Welcome</h2>
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div *ngIf="isLoading" style="text-align: center;">
+        <app-loading-spinner></app-loading-spinner>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"  *ngIf="!isLoading">
         <div formGroupName="userData">
           <div class="form-group">
             <input
