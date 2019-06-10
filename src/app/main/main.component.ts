@@ -8,7 +8,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   animations: [
     trigger('buttonState', [
       state('invisible', style({
-        opacity: 0
+        opacity: 1
       })),
       state('visible', style({
         opacity: 1

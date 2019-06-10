@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Welcome</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="userData">
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              required
+              email
+              class="form-control"
+              placeholder="E-mail">
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              id="password"
+              formControlName="password"
+              required class="form-control"
+              placeholder="Password">
+          </div>
+        </div>
+        <div class="justify-content-center d-flex">
+          <button [disabled]="loginForm.invalid" class="btn btn-primary" type="submit">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

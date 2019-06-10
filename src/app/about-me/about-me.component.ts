@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-about-me',
   templateUrl: './about-me.component.html',
-  styleUrls: ['./about-me.component.css']
+  styleUrls: ['./about-me.component.css'],
+  animations: []
 })
 export class AboutMeComponent implements OnInit {
   icons = ['https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png',

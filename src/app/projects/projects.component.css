@@ -22,6 +22,7 @@
 }
 
 .list-group-item {
+  position: fixed;
   background-color: black;
   text-transform: uppercase;
   color: white!important;

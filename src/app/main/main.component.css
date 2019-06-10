@@ -3,6 +3,8 @@
 .container {
   height: 100vh;
   text-align: center;
+  letter-spacing: 0.05em;
+
 }
 
 .col {
@@ -23,8 +25,11 @@
 }
 
 .btn-my {
+  height: 5vh;
+  width: 10vw;
   color: black;
   border: 1px solid black;
+  font-size: 21px;
 }
 
 .btn-my:hover {

@@ -11,6 +11,11 @@ import {ProjectsComponent} from './projects/projects.component';
 import {ContactComponent} from './contact/contact.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MoreComponent } from './more/more.component';
+import {RouteReuseStrategy} from '@angular/router';
+import {CustomReuseStrategy} from './route-reuse-strategy';
+import { LoginComponent } from './login/login.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,14 +26,21 @@ import { MoreComponent } from './more/more.component';
     AboutMeComponent,
     ProjectsComponent,
     ContactComponent,
-    MoreComponent
+    MoreComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: RouteReuseStrategy,
+    useClass: CustomReuseStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
