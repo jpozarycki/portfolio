@@ -11,8 +11,6 @@ import {ProjectsComponent} from './projects/projects.component';
 import {ContactComponent} from './contact/contact.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MoreComponent} from './more/more.component';
-import {RouteReuseStrategy} from '@angular/router';
-import {CustomReuseStrategy} from './route-reuse-strategy';
 import {LoginComponent} from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
@@ -47,10 +45,6 @@ import {DataStorageInterceptorService} from './shared/data-storage-interceptor.s
     ReactiveFormsModule
   ],
   providers: [
-    {
-      provide: RouteReuseStrategy,
-      useClass: CustomReuseStrategy
-    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: DataStorageInterceptorService,

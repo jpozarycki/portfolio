@@ -71,5 +71,6 @@ export class DataStorageService {
   deleteProject(id: number) {
     this.projects.splice(id, 1);
     this.projectsChanged.next(this.projects.slice());
+    this.saveProjects();
   }
 }

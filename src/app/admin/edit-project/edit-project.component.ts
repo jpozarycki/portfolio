@@ -3,11 +3,23 @@ import {Project} from '../../projects/project.model';
 import {FormArray, FormControl, FormGroup} from '@angular/forms';
 import {DataStorageService} from '../../shared/data-storage.service';
 import {Subscription} from 'rxjs';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-edit-project',
   templateUrl: './edit-project.component.html',
-  styleUrls: ['./edit-project.component.css']
+  styleUrls: ['./edit-project.component.css'],
+  animations: [
+    trigger('contentState', [
+      state('invisible', style({
+        opacity: 0
+      })),
+      state('visible', style({
+        opacity: 1
+      })),
+      transition('invisible <=> visible', animate(200))
+    ])
+  ]
 })
 export class EditProjectComponent implements OnInit, OnDestroy {
   private projects: Project[] = [];
@@ -17,18 +29,26 @@ export class EditProjectComponent implements OnInit, OnDestroy {
   projects$: Subscription;
   saved = false;
   deleted = false;
+  state = 'invisible';
 
 
   constructor(private dataStorageService: DataStorageService) {
   }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.onAnimate();
+    }, 100);
     this.projects$ = this.dataStorageService.projectsChanged.subscribe((projects: Project[]) => {
       this.projects = projects;
     });
     this.projects = this.dataStorageService.getProjects();
     console.log(this.projects);
     this.initForm(0);
+  }
+
+  onAnimate() {
+    this.state = 'visible';
   }
 
   get formData() {

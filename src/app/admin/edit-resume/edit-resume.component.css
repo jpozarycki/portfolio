@@ -1,18 +1,25 @@
+* {
+  letter-spacing: 0.05em;
+}
+
 .container{
   margin-top: 2vh;
   display: flex;
   justify-content: center;
 }
 
-h2  {
+.btn-primary {
+  background-color: black;
   text-transform: uppercase;
+  border: none;
+  font-weight: bolder;
+  transition: 300ms;
 }
 
-.current-link {
-  border: 1px solid dimgrey;
+.btn-primary:hover {
+  transform: scale(1.05);
 }
 
-img {
-  max-height: 500px;
+a {
+  color: #93232d;
 }
-

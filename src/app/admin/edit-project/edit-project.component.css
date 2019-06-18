@@ -1,13 +1,15 @@
+
 .container-top {
   margin-top: 2vh;
   display: flex;
   justify-content: center;
 }
 
+.alert-success, .alert-danger {
+  border: none;
+}
+
 .btn-group {
-  /*padding-bottom: 1vh;*/
-  /*display: flex;*/
-  /*justify-content: center;*/
   padding: 1vh 0;
 }
 
@@ -19,7 +21,54 @@ img {
   max-height: 50vh;
 }
 
-.form-control {
-  width: auto !important;
-  display: block !important;
+.btn-my, .btn-primary {
+  background-color: #93232d;
+  color: white;
+  transition: 200ms;
+  border: none!important;
+
+}
+
+.btn-my:hover, .btn-primary:hover {
+  background-color: white;
+  color: #93232d;
+}
+
+.btn-add {
+  color: white;
+  background-color: #c22836;
+}
+
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn-add:hover {
+  color: #c22836;
+  background-color: #b0b0b0;
+}
+
+.btn-outine-danger {
+  color: #c22836;
+}
+
+.btn-outline-success {
+  color: black;
+  border: 1px solid black;
+}
+
+.btn-outline-success:hover {
+  color: white;
+  background-color: black;
+}
+
+.btn-danger {
+  background-color: #c22836;
+}
+
+.btn-danger:hover {
+  color: #c22836;
+  background-color: #b0b0b0;
+  border: 1px solid #b0b0b0;
 }

@@ -15,4 +15,9 @@ html {
   background: transparent;
 }
 
+@media (max-width: 978px) {
+  .container {
+    transform: scale(0.9);
+  }
 
+}

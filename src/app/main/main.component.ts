@@ -8,7 +8,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   animations: [
     trigger('buttonState', [
       state('invisible', style({
-        opacity: 1
+        opacity: 0
       })),
       state('visible', style({
         opacity: 1
@@ -22,7 +22,7 @@ export class MainComponent implements OnInit {
   message = '';
   messageInput =
     'Hello, I\'m happy to have you here.';
-  messageTwoInput = ' My name is Jakub and I do stuff.';
+  messageTwoInput = ' My name is Jakub and I love programming.';
   messageTwo = '';
   state = 'invisible';
 
@@ -41,25 +41,13 @@ export class MainComponent implements OnInit {
         clearInterval(intervalTyping);
         setTimeout(() => {
           this.generateSecondMessage();
-        }, 200);
+        }, 180);
       } else {
         this.message = this.message.concat(this.messageInput.charAt(charIndex));
         charIndex++;
       }
-    }, 50);
+    }, 40);
 
-  }
-
-  cleanMessage() {
-    let messageLength = this.message.length;
-    const intervalCleaner = setInterval(() => {
-      if (messageLength < 0) {
-        clearTimeout(intervalCleaner);
-      } else {
-        this.message = this.message.substr(0, messageLength);
-        messageLength--;
-      }
-    }, 50);
   }
 
   private generateSecondMessage() {

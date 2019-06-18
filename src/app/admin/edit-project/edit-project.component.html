@@ -1,11 +1,11 @@
-<div class="container container-top">
+<div class="container container-top" [@contentState]="state">
   <div class="row">
     <div class="col-xs-12">
       <div class="row">
         <div class="btn-group">
-          <button class="btn btn-primary" type="button"
+          <button class="btn btn-my" type="button"
                   *ngFor="let project of projects; let i = index" (click)="initForm(i)">{{project.title}}</button>
-          <button class="btn btn-outline-info" type="button" (click)="initForm(projects.length)">+</button>
+          <button class="btn btn-add" type="button" (click)="initForm(projects.length)">+</button>
         </div>
       </div>
       <div class="row"*ngIf="saved" style="padding-top: 1vh">

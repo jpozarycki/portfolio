@@ -3,11 +3,11 @@
 }
 
 .navbar-brand {
-  padding-left: 5ch;
+  padding-left: 5vw;
   font-size: 20px;
   font-weight: bold;
   letter-spacing: 0.05em;
-  transition: 0.5s;
+  transition: 0.3s;
 
 }
 
@@ -25,7 +25,6 @@
 }
 
 .navbar-nav {
-  padding-right: 6ch;
   align-items: center;
 }
 
@@ -64,18 +63,14 @@
   width: 0;
 }
 
+.nav-link:hover {
+  transform: scale(1.05);
+}
+
 .nav-link:hover:after, .nav-link:active:after {
   width: 100%;
   left: 0;
 }
-
-@media screen and (max-height: 300px) {
-  ul {
-    margin-top: 40px;
-  }
-}
-
-
 
 img {
   height: 3.5vh;

@@ -1,8 +1,7 @@
 import {ActivatedRouteSnapshot, DetachedRouteHandle, RouteReuseStrategy} from '@angular/router';
 import {MoreComponent} from './more/more.component';
 import {MainComponent} from './main/main.component';
-import {AppComponent} from './app.component';
-import {AboutMeComponent} from './about-me/about-me.component';
+
 
 export class CustomReuseStrategy implements RouteReuseStrategy {
   handlers: {[key: string]: DetachedRouteHandle} = {};
@@ -29,5 +28,4 @@ export class CustomReuseStrategy implements RouteReuseStrategy {
   shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot): boolean {
     return curr.component !== MoreComponent;
   }
-
 }

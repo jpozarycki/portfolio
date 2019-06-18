@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {slideInAnimation} from './route-animation';
+import {mainToOthers} from './route-animation';
 import {LoginService} from './login/service/login.service';
 import {DataStorageService} from './shared/data-storage.service';
 
@@ -7,11 +7,12 @@ import {DataStorageService} from './shared/data-storage.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  animations: [slideInAnimation]
+  animations: [mainToOthers]
 })
 export class AppComponent implements OnInit {
 
-  constructor(private loginService: LoginService, private dataStorageService: DataStorageService) {}
+  constructor(private loginService: LoginService, private dataStorageService: DataStorageService) {
+  }
 
   ngOnInit(): void {
     this.loginService.autoLogin();

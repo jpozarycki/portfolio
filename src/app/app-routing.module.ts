@@ -7,7 +7,6 @@ import {ProjectsComponent} from './projects/projects.component';
 import {ContactComponent} from './contact/contact.component';
 import {LoginComponent} from './login/login.component';
 import {AdminComponent} from './admin/admin.component';
-import {LoginGuard} from './login/service/login.guard';
 import {EditProjectComponent} from './admin/edit-project/edit-project.component';
 import {EditResumeComponent} from './admin/edit-resume/edit-resume.component';
 
