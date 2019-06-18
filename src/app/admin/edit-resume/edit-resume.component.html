@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <a [href]="resumeLink" target="_blank">Check the current link</a>
+
+      <form [formGroup]="resumeForm" (ngSubmit)="onSubmitResume()">
+        <div class="form-group">
+          <label for="resumeLink">Enter your new link</label>
+          <input type="text" id="resumeLink" formControlName="resume" class="form-control">
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

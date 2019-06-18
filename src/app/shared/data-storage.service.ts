@@ -4,15 +4,14 @@ import {HttpClient} from '@angular/common/http';
 import {map, take} from 'rxjs/operators';
 import {Subject} from 'rxjs';
 
-export interface ResponseData {
+export interface ResumeData {
   link: string;
 }
 @Injectable({
   providedIn: 'root'
 })
 export class DataStorageService {
-  resumeLink = new Subject();
-
+  resumeLink = new Subject<string>();
   private projects: Project[] = [
     new Project(
       'Exchange rate app',
@@ -35,6 +34,7 @@ export class DataStorageService {
       'https://github.com'),
 
   ];
+  projectsChanged = new Subject<Project[]>();
   // private resumeLink =
   //   // tslint:disable-next-line:max-line-length
   //   'https://firebasestorage.googleapis.com/v0/b/portfolio-3ff69.appspot.com/o/resume.pdf?alt=media&token=679deb5d-1618-4af5-b6ab-b04256820763';
@@ -42,7 +42,7 @@ export class DataStorageService {
   constructor(private http: HttpClient) { }
 
   getProjects() {
-    return this.projects;
+    return this.projects.slice();
   }
 
   // getResumeLink() {
@@ -56,10 +56,25 @@ export class DataStorageService {
   }
 
   getResumeLink() {
-    this.http.get<ResponseData>('https://portfolio-3ff69.firebaseio.com/resume.json').pipe(map(resData => {
+    this.http.get<ResumeData>('https://portfolio-3ff69.firebaseio.com/resume.json').pipe(map(resData => {
       return resData.link;
     })).subscribe(res => {
       this.resumeLink.next(res);
     });
+  }
+
+  updateProjects(id: number, newProject: Project) {
+    this.projects[id] = newProject;
+    this.projectsChanged.next(this.projects.slice());
+  }
+
+  addProject(newProject: Project) {
+    this.projects.push(newProject);
+    this.projectsChanged.next(this.projects.slice());
+  }
+
+  deleteProject(id: number) {
+    this.projects.splice(id, 1);
+    this.projectsChanged.next(this.projects.slice());
   }
 }

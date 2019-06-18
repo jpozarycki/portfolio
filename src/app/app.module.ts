@@ -18,6 +18,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { LoadingSpinnerComponent } from './login/loading-spinner/loading-spinner.component';
 import { AdminComponent } from './admin/admin.component';
+import { EditProjectComponent } from './admin/edit-project/edit-project.component';
+import { EditResumeComponent } from './admin/edit-resume/edit-resume.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { AdminComponent } from './admin/admin.component';
     MoreComponent,
     LoginComponent,
     LoadingSpinnerComponent,
-    AdminComponent
+    AdminComponent,
+    EditProjectComponent,
+    EditResumeComponent
   ],
   imports: [
     BrowserModule,

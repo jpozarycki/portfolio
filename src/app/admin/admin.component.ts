@@ -55,24 +55,23 @@ export class AdminComponent implements OnInit {
     pictureUrl = this.projects[0].pictureUrl;
     description = this.projects[0].description;
     gitUrl = this.projects[0].gitLink;
-    if (!this.projects[0].webLink) {
+    if (this.projects[0].webLink) {
       webUrl = this.projects[0].webLink;
     }
     for (const technology of this.projects[0].usedTechnologies) {
       technologies.push(
-        new FormGroup({
-          technology: new FormControl(technology)
-        })
+        new FormControl(technology)
       );
     }
-
-    this.projectsForm = new FormGroup({
-      title: new FormControl(title),
-      pictureUrl: new FormControl(pictureUrl),
-      description: new FormControl(description),
-      gitUrl: new FormControl(gitUrl),
-      webUrl: new FormControl(webUrl),
-      technologies
-    });
+    setTimeout(() => {
+      this.projectsForm = new FormGroup({
+        title: new FormControl(title),
+        pictureUrl: new FormControl(pictureUrl),
+        description: new FormControl(description),
+        gitUrl: new FormControl(gitUrl),
+        webUrl: new FormControl(webUrl),
+        technologies
+      });
+    }, 200);
   }
 }
