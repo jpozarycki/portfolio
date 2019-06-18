@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.user$ = this.loginService.user.subscribe(user => {
       this.isAuthenticated = !!user;
     });
-    this.dataStorageService.getResumeLink();
     this.resume$ = this.dataStorageService.resumeLink.subscribe(resume => {
       console.log(resume);
       this.resumeLink = resume;

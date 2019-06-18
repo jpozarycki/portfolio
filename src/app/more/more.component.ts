@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {aboutMeToOthers} from '../route-animation';
 import {RouterOutlet} from '@angular/router';
+import {DataStorageService} from '../shared/data-storage.service';
 
 @Component({
   selector: 'app-more',

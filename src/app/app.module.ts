@@ -10,16 +10,17 @@ import {AboutMeComponent} from './about-me/about-me.component';
 import {ProjectsComponent} from './projects/projects.component';
 import {ContactComponent} from './contact/contact.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MoreComponent } from './more/more.component';
+import {MoreComponent} from './more/more.component';
 import {RouteReuseStrategy} from '@angular/router';
 import {CustomReuseStrategy} from './route-reuse-strategy';
-import { LoginComponent } from './login/login.component';
+import {LoginComponent} from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
-import { LoadingSpinnerComponent } from './login/loading-spinner/loading-spinner.component';
-import { AdminComponent } from './admin/admin.component';
-import { EditProjectComponent } from './admin/edit-project/edit-project.component';
-import { EditResumeComponent } from './admin/edit-resume/edit-resume.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {LoadingSpinnerComponent} from './login/loading-spinner/loading-spinner.component';
+import {AdminComponent} from './admin/admin.component';
+import {EditProjectComponent} from './admin/edit-project/edit-project.component';
+import {EditResumeComponent} from './admin/edit-resume/edit-resume.component';
+import {DataStorageInterceptorService} from './shared/data-storage-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -45,10 +46,16 @@ import { EditResumeComponent } from './admin/edit-resume/edit-resume.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [{
-    provide: RouteReuseStrategy,
-    useClass: CustomReuseStrategy
-  }],
+  providers: [
+    {
+      provide: RouteReuseStrategy,
+      useClass: CustomReuseStrategy
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: DataStorageInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule {

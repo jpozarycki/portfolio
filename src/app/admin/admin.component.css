@@ -1,18 +1,11 @@
-.container{
-  margin-top: 2vh;
-  display: flex;
-  justify-content: center;
-}
-
-h2  {
+.nav-link {
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  border-radius: 0;
+  color: #606060;
 }
 
-.current-link {
-  border: 1px solid dimgrey;
+.nav-link.active {
+  font-weight: bolder;
+  color: black;
 }
-
-img {
-  max-height: 500px;
-}
-

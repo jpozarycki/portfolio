@@ -15,6 +15,8 @@ export class EditProjectComponent implements OnInit, OnDestroy {
   editMode = false;
   id: number;
   projects$: Subscription;
+  saved = false;
+  deleted = false;
 
 
   constructor(private dataStorageService: DataStorageService) {
@@ -34,6 +36,8 @@ export class EditProjectComponent implements OnInit, OnDestroy {
   }
 
   initForm(index: number) {
+    this.saved = false;
+    this.deleted = false;
     this.id = index;
     let title = '';
     let pictureUrl = '';
@@ -92,7 +96,8 @@ export class EditProjectComponent implements OnInit, OnDestroy {
     } else {
       this.dataStorageService.addProject(newProject);
     }
-      }
+    this.saved = true;
+  }
 
   onDeleteTechnology(index: number) {
     (this.projectsForm.get('technologies') as FormArray).removeAt(index);
@@ -100,6 +105,7 @@ export class EditProjectComponent implements OnInit, OnDestroy {
 
   onDeleteProject() {
     this.dataStorageService.deleteProject(this.id);
+    this.deleted = true;
   }
 
   ngOnDestroy(): void {

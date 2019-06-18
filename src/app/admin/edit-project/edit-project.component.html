@@ -1,7 +1,6 @@
-<div class="container">
+<div class="container container-top">
   <div class="row">
     <div class="col-xs-12">
-      <h2>Edit projects</h2>
       <div class="row">
         <div class="btn-group">
           <button class="btn btn-primary" type="button"
@@ -9,80 +8,99 @@
           <button class="btn btn-outline-info" type="button" (click)="initForm(projects.length)">+</button>
         </div>
       </div>
-      <form [formGroup]="projectsForm" (ngSubmit)="onSubmit()">
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="form-group">
-              <label for="title">Title</label>
-              <input type="text" id="title" formControlName="title" class="form-control">
-            </div>
-          </div>
+      <div class="row"*ngIf="saved" style="padding-top: 1vh">
+        <div class="col-lg-12 alert alert-success text-center">
+          <h4>Project saved successfully!</h4>
         </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="form-group">
-              <label for="pictureUrl">PictureUrl</label>
-              <input type="text" id="pictureUrl" formControlName="pictureUrl" class="form-control" #pictureUrl>
-              <img [src]="pictureUrl.value" alt="">
-            </div>
-          </div>
+      </div>
+      <div class="row"*ngIf="deleted" style="padding-top: 1vh">
+        <div class="col-lg-12 alert alert-danger text-center">
+          <h4>Project deleted successfully!</h4>
         </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="form-group">
-              <label for="description">Description</label>
-              <textarea type="text" id="description" formControlName="description" rows="8"
-                        class="form-control"></textarea>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="form-group">
-              <label for="gitUrl">GitHub URL</label>
-              <input type="text" id="gitUrl" formControlName="gitUrl" class="form-control">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="form-group">
-              <label for="webUrl">Website URL</label>
-              <input type="text" id="webUrl" formControlName="webUrl" class="form-control">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12" formArrayName="technologies">
-            <div class="form-group">
-              <div class="row" *ngFor="let technology of formData.controls; let i = index"
-                   style="margin-top: 4px;">
-                <div class="col-xs-8">
-                  <input type="text" class="form-control"
-                         formControlName="{{i}}">
-                </div>
-                <div class="col-xs-2">
-                  <button class="btn btn-outline-danger" style="margin-left: 3px" type="button"
-                          (click)="onDeleteTechnology(i)">X
-                  </button>
-                </div>
+      </div>
+      <div *ngIf="!saved && !deleted">
+        <form [formGroup]="projectsForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" formControlName="title" class="form-control">
               </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-4">
-            <button class="btn btn-outline-success" type="button" (click)="onAddTechnology()">Add next technology
-            </button>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="pictureUrl">PictureUrl</label>
+                <input type="text" id="pictureUrl" formControlName="pictureUrl" class="form-control" #pictureUrl>
+                <img [src]="pictureUrl.value" alt="" style="padding-bottom: 1vh;">
+              </div>
+            </div>
           </div>
-          <div class="col-xs-4">
-            <button class="btn btn-primary" type="submit" style="margin-left: 3px">Submit</button>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="description">Description</label>
+                <textarea type="text" id="description" formControlName="description" rows="8"
+                          class="form-control"></textarea>
+              </div>
+            </div>
           </div>
-          <div class="col-xs-4">
-            <button class="btn btn-danger" type="button" style="margin-left: 3px" (click)="onDeleteProject()">Delete project</button>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="gitUrl">GitHub URL</label>
+                <input type="text" id="gitUrl" formControlName="gitUrl" class="form-control">
+              </div>
+            </div>
           </div>
-        </div>
-      </form>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="webUrl">Website URL</label>
+                <input type="text" id="webUrl" formControlName="webUrl" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12" formArrayName="technologies" id="technologies">
+            <div class="form-group">
+              <label>Technologies</label>
+              <div class="container">
+                <div class="row" *ngFor="let technology of formData.controls; let i = index"
+                     style="margin-bottom: 1vh">
+                  <div class="col-xs-8">
+                    <input type="text" class="form-control"
+                           formControlName="{{i}}">
+                  </div>
+                  <div class="col-xs-2">
+                    <button class="btn btn-outline-danger" style="margin-left: 3px" type="button"
+                            (click)="onDeleteTechnology(i)">X
+                    </button>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <button class="btn btn-outline-success" type="button" (click)="onAddTechnology()">Add next technology
+              </button>
+            </div>
+          </div>
+          <div class="container">
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="btn-group">
+                    <button class="btn btn-primary" type="submit" style="margin-left: 3px">Save project</button>
+                    <button class="btn btn-danger" type="button" style="margin-left: 3px" (click)="onDeleteProject()">Delete project</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
